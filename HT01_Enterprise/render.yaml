@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: ht01-enterprise-api
+    runtime: python
+    plan: free
+    buildCommand: python -m compileall -q app
+    startCommand: python app/server.py
+    healthCheckPath: /api/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.7
+      - key: HT01_SECRET
+        generateValue: true
+      - key: HT01_DATA_DIR
+        value: /tmp/ht01_data
+      - key: HT01_CROSS_SITE_COOKIE
+        value: "1"
+      - key: HT01_CORS_ORIGINS
+        sync: false

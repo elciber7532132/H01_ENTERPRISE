@@ -1,0 +1,2 @@
+# HT-01 utiliza únicamente la biblioteca estándar de Python.
+# SQLite viene integrado con Python; no requiere servidor ni paquetes externos.
